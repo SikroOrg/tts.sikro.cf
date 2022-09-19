@@ -4,7 +4,7 @@ services:
   mstts:
     container_name: ms-tts
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment:
       - TOKEN=3cedbb0b635c4e758780b78a0c66a379
     image: ljmalyp/ms-tts:latest
