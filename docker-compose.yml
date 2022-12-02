@@ -3,8 +3,21 @@ version: '3'
 services:
   mstts:
     container_name: ms-tts
+    image: ljmalyp/ms-tts:latest
     ports:
       - 3000:3000
     environment:
       - TOKEN=3cedbb0b635c4e758780b78a0c66a379
-    image: ljmalyp/ms-tts:latest
+
+  bitwarden:
+    image: bitwardenrs/server:latest
+    container_name: bitwarden
+    ports:
+      - 80:80
+    environment:
+      - SIGNUPS_ALLOWED=true
+      - DATABASE_URL=/data/bitwarden.db
+      - ROCKET_WORKERS=10
+      - WEB_VAULT_ENABLED=true
+    volumes:
+      - ./data:/data # host:docker
