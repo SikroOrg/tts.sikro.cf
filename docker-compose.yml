@@ -20,4 +20,7 @@ services:
       - ROCKET_WORKERS=10
       - WEB_VAULT_ENABLED=true
     volumes:
-      - /home/docker/bitwarden/data:/data/
+      - bitwardendata:/data
+
+volumes:
+  bitwardendata:
