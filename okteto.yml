@@ -16,4 +16,4 @@ deploy:
       - mstts
       - bitwarden
     volumes:
-      - /var/docker/files/bitwarden/data
+      - /home/docker/bitwarden/data
