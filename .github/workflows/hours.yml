@@ -1,0 +1,26 @@
+name: 每小时访问一次okteto
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # 每小时执行一次
+    - cron:  '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: 获取北京时间
+        id: time
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
+          format: 'YYYY-MM-DD HH:mm:ss'
+
+      - name: 使其不休眠
+        run: |
+          echo ${{ steps.time.outputs.time }}
+          curl https://mstts-sikroyang.cloud.okteto.net/
