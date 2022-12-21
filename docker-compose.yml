@@ -15,10 +15,14 @@ services:
     ports:
       - 80:80
     environment:
-      - SIGNUPS_ALLOWED=true
+      - SERVER_ADMIN_EMAIL=yxx95lz@163.com
+      - SIGNUPS_ALLOWED=false
+      - INVITATIONS_ALLOWED=true
+      - WEBSOCKET_ENABLED=true
       - DATABASE_URL=/data/bitwarden.db
       - ROCKET_WORKERS=10
       - WEB_VAULT_ENABLED=true
+      - ADMIN_TOKEN=yaoqing12345678
     volumes:
       - bitwardendata:/data
 
