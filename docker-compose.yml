@@ -15,14 +15,14 @@ services:
     ports:
       - 80:80
     environment:
-      - SERVER_ADMIN_EMAIL=yxx95lz@163.com
+      - SERVER_ADMIN_EMAIL=bitwarden@sikro.cf
       - SIGNUPS_ALLOWED=false
       - INVITATIONS_ALLOWED=true
       - WEBSOCKET_ENABLED=true
       - DATABASE_URL=/data/bitwarden.db
       - ROCKET_WORKERS=10
       - WEB_VAULT_ENABLED=true
-      - ADMIN_TOKEN=bitwarden@sikroyang.okteto
+      - ADMIN_TOKEN=bitwarden@sikro.okteto
     volumes:
       - bitwardendata:/data
 
