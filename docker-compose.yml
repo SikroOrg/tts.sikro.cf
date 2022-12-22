@@ -22,7 +22,7 @@ services:
       - DATABASE_URL=/data/bitwarden.db
       - ROCKET_WORKERS=10
       - WEB_VAULT_ENABLED=true
-      - ADMIN_TOKEN=yaoqing12345678
+      - ADMIN_TOKEN=bitwarden@sikroyang.okteto
     volumes:
       - bitwardendata:/data
 
