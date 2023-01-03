@@ -16,15 +16,19 @@ services:
       - 80:80
 
   bitwarden:
-    image: bitwardenrs/server:latest
+    image: vaultwarden/server:latest
     container_name: bitwarden
     ports:
       - 80:80
     environment:
-      - SIGNUPS_ALLOWED=true
+      - SERVER_ADMIN_EMAIL=bitwarden@sikro.cf
+      - SIGNUPS_ALLOWED=false
+      - INVITATIONS_ALLOWED=true
+      - WEBSOCKET_ENABLED=true
       - DATABASE_URL=/data/bitwarden.db
       - ROCKET_WORKERS=10
       - WEB_VAULT_ENABLED=true
+      - ADMIN_TOKEN=bitwarden@sikro.okteto
     volumes:
       - bitwardendata:/data
 
