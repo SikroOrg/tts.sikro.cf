@@ -9,6 +9,12 @@ services:
     environment:
       - TOKEN=3cedbb0b635c4e758780b78a0c66a379
 
+  ghproxy:
+    container_name: ghproxy
+    image: hunsh/gh-proxy-py:latest
+    ports:
+      - 80:80
+
   bitwarden:
     image: bitwardenrs/server:latest
     container_name: bitwarden
