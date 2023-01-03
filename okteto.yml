@@ -14,5 +14,4 @@ deploy:
     file: docker-compose.yml
     services:
       - mstts
-      - ghproxy
       - bitwarden
